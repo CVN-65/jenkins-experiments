@@ -59,8 +59,30 @@ def pt =
     //     )
     // ]
 ]
-
-podTemplate(pt) {
+podTemplate(
+    // pt
+    yaml: """
+apiVersion: "v1"
+kind: "Pod"
+metadata:
+  name: "jnlp-pod-template"
+spec:
+  containers:
+  - args:
+    name: "jnlp"
+    image: "devallsystem/test:1.0.0"
+    imagePullPolicy: "Always"
+    tty: false
+    resources:
+      limits:
+        memory: "2.5Gi"
+        cpu: "2000m"
+      requests:
+        memory: "2Gi"
+        cpu: "1000m"
+  restartPolicy: "Never"
+    """
+) {
     node(podLabel) {
         stage('Test asw s3 template') {
             container(containerName) {
