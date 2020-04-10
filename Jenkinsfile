@@ -31,6 +31,12 @@ def pt =
                 periodSeconds: 0,
                 successThreshold: 0
             ),
+            env: [
+                [
+                    neme: 'test',
+                    value: 'prova'
+                ]
+            ]
             envVars: [
                 envVar(
                     key: 'no_proxy',
