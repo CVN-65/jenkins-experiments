@@ -60,7 +60,7 @@ podTemplate(pt) {
         stage('Test asw s3 template') {
             container(containerName) {
                 stage('Dependencies') {
-                    echo "Test"
+                    sh "ls -la"
                 }
             }
         }
