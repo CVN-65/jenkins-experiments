@@ -36,7 +36,7 @@ def pt =
                     neme: 'test',
                     value: 'prova'
                 ]
-            ]
+            ],
             envVars: [
                 envVar(
                     key: 'no_proxy',
