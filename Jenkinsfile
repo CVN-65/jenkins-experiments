@@ -7,6 +7,8 @@ def containerName = "jnlp"
 
 import org.csanchez.jenkins.plugins.kubernetes.model.KeyValueEnvVar
 
+def var = new KeyValueEnvVar('test', 'prova')
+
 def pt = 
 [
     label: podLabel,
@@ -38,11 +40,11 @@ def pt =
                 //     key: 'no_proxy',
                 //     value: 'openpaas-jenkins-deploy,172.30.0.1,*.svc.cluster.local,openpaas-jenkins-deploy.ops-datalab-dev-axa-it.svc.cluster.local'
                 // )
-                [
-                    key: 'test',
-                    value: 'prova'
-                ] as KeyValueEnvVar
-                
+                // [
+                //     key: 'test',
+                //     value: 'prova'
+                // ] as KeyValueEnvVar
+                var
                 // [
                 //     symbol: 'envVar',
                 //     klass: 'TemplateEnvVar',
