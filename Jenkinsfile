@@ -31,17 +31,15 @@ def pt =
                 periodSeconds: 0,
                 successThreshold: 0
             ),
-            env: [
-                [
-                    neme: 'test',
-                    value: 'prova'
-                ]
-            ],
             envVars: [
                 envVar(
                     key: 'no_proxy',
                     value: 'openpaas-jenkins-deploy,172.30.0.1,*.svc.cluster.local,openpaas-jenkins-deploy.ops-datalab-dev-axa-it.svc.cluster.local'
-                )
+                ),
+                [
+                    neme: 'test',
+                    value: 'prova'
+                ]
                 // [
                 //     symbol: 'envVar',
                 //     klass: 'TemplateEnvVar',
