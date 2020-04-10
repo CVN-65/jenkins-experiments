@@ -37,11 +37,9 @@ def pt =
                 //     value: 'openpaas-jenkins-deploy,172.30.0.1,*.svc.cluster.local,openpaas-jenkins-deploy.ops-datalab-dev-axa-it.svc.cluster.local'
                 // )
                 [
-                    envVar: [
-                        key: 'test',
-                        value: 'prova'
-                    ]
-                ]
+                    key: 'test',
+                    value: 'prova'
+                ] as KeyValueEnvVar
                 
                 // [
                 //     symbol: 'envVar',
