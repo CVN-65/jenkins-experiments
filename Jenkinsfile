@@ -39,7 +39,7 @@ def pt =
                 [
                     key: 'test',
                     value: 'prova'
-                ] as KeyValueEnvVar
+                ] as TemplateEnvVar
                 
                 // [
                 //     symbol: 'envVar',
