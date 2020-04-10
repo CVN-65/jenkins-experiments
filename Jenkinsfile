@@ -61,12 +61,12 @@ def pt =
 ]
 podTemplate(
     // pt
+    label: podLabel,
     cloud: 'openshift',
     yaml: """
 apiVersion: "v1"
 kind: "Pod"
 metadata:
-  name: "jnlp-pod-template"
 spec:
   containers:
   - args:
