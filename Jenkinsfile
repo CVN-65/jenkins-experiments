@@ -5,6 +5,8 @@ milestone(buildNumber)
 def podLabel = "jnlp-pod-template"
 def containerName = "jnlp"
 
+import org.csanchez.jenkins.plugins.kubernetes.model.KeyValueEnvVar
+
 def pt = 
 [
     label: podLabel,
@@ -39,7 +41,7 @@ def pt =
                 [
                     key: 'test',
                     value: 'prova'
-                ] as envVar
+                ] as KeyValueEnvVar
                 
                 // [
                 //     symbol: 'envVar',
