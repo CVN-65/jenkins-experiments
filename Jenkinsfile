@@ -61,6 +61,7 @@ def pt =
 ]
 podTemplate(
     // pt
+    cloud: 'openshift',
     yaml: """
 apiVersion: "v1"
 kind: "Pod"
