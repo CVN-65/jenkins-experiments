@@ -60,29 +60,7 @@ def pt =
     // ]
 ]
 podTemplate(
-    // pt
-    label: podLabel,
-    cloud: 'openshift',
-    yaml: """
-apiVersion: "v1"
-kind: "Pod"
-metadata:
-spec:
-  containers:
-  - args:
-    name: "jnlp"
-    image: "devallsystem/test:1.0.0"
-    imagePullPolicy: "Always"
-    tty: false
-    resources:
-      limits:
-        memory: "2.5Gi"
-        cpu: "2000m"
-      requests:
-        memory: "2Gi"
-        cpu: "1000m"
-  restartPolicy: "Never"
-    """
+     pt
 ) {
     node(podLabel) {
         stage('Test asw s3 template') {
