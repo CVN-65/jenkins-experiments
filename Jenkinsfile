@@ -13,46 +13,47 @@ def pt =
     nodeUsageMode: 'EXCLUSIVE',
     slaveConnectTimeout: 100,
     containers: [
-    [
-        name: containerName,
-        image: 'devallsystem/test:1.0.0',
-        workingDir: '/home/jenkins',
-        args: '${computer.jnlpmac} ${computer.name}',
-        alwaysPullImage: true,
-        ttyEnabled: false,
-        resourceRequestCpu: '1000m',
-        resourceRequestMemory: '2Gi',
-        resourceLimitCpu: '2000m',
-        resourceLimitMemory: '2.5Gi',
-        livenessProbe: containerLivenessProbe(
-            initialDelaySeconds: 0,
-            timeoutSeconds: 0,
-            failureThreshold:0,
-            periodSeconds: 0,
-            successThreshold: 0
-        ),
-        envVars: [
-            envVar(
-                key: 'no_proxy',
-                value: 'openpaas-jenkins-deploy,172.30.0.1,*.svc.cluster.local,openpaas-jenkins-deploy.ops-datalab-dev-axa-it.svc.cluster.local'
-            )
-            // [
-            //     symbol: 'envVar',
-            //     klass: 'TemplateEnvVar',
-            //     arguments: [
-            //         key: "HTTPS_PROXY",
-            //         value: "http://http-proxy-internal.ops-datalab-dev-axa-it.svc.cluster.local:8080"
-            //     ]
-            // ]
+        [
+            name: containerName,
+            image: 'devallsystem/test:1.0.0',
+            workingDir: '/home/jenkins',
+            args: '${computer.jnlpmac} ${computer.name}',
+            alwaysPullImage: true,
+            ttyEnabled: false,
+            resourceRequestCpu: '1000m',
+            resourceRequestMemory: '2Gi',
+            resourceLimitCpu: '2000m',
+            resourceLimitMemory: '2.5Gi',
+            livenessProbe: containerLivenessProbe(
+                initialDelaySeconds: 0,
+                timeoutSeconds: 0,
+                failureThreshold:0,
+                periodSeconds: 0,
+                successThreshold: 0
+            ),
+            envVars: [
+                envVar(
+                    key: 'no_proxy',
+                    value: 'openpaas-jenkins-deploy,172.30.0.1,*.svc.cluster.local,openpaas-jenkins-deploy.ops-datalab-dev-axa-it.svc.cluster.local'
+                )
+                // [
+                //     symbol: 'envVar',
+                //     klass: 'TemplateEnvVar',
+                //     arguments: [
+                //         key: "HTTPS_PROXY",
+                //         value: "http://http-proxy-internal.ops-datalab-dev-axa-it.svc.cluster.local:8080"
+                //     ]
+                // ]
+            ]
         ]
     ]
-    ],
-    volumes: [
-        secretVolume(
-            secretName: 'infra-test-aws',
-            mountPath: '/home/jenkins/.aws/'
-        )
-    ]
+    // ,
+    // volumes: [
+    //     secretVolume(
+    //         secretName: 'infra-test-aws',
+    //         mountPath: '/home/jenkins/.aws/'
+    //     )
+    // ]
 ]
 
 podTemplate(pt) {
