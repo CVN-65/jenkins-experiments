@@ -27,7 +27,8 @@ class GlobalVars {
                     ],
                     envVars: []
                 ]
-            ]
+            ],
+            volumes: []
         ]
         return pd
     }

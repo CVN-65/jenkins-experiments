@@ -61,10 +61,10 @@ def pt =
         //     secretName: 'infra-test-aws',
         //     mountPath: '/home/jenkins/.aws/'
         // )
-        [
-            secretName: 'infra-test-aws',
-            mountPath: '/home/jenkins/.aws/'
-        ]
+        // [
+        //     secretName: 'infra-test-aws',
+        //     mountPath: '/home/jenkins/.aws/'
+        // ]
     ]
 ]
 podTemplate(
