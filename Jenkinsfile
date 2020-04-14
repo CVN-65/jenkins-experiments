@@ -2,6 +2,15 @@ def buildNumber = env.BUILD_NUMBER as int
 if (buildNumber > 1) milestone(buildNumber - 1)
 milestone(buildNumber)
 
+@Library('pod-conf-files') _
+import com.axa.GlobalVars
+
+String helper(GlobalVars globalVars) {
+    return globalVars.getPodTemplate()
+}
+def template = helper(new GlobalVars())
+
+
 def podLabel = "jnlp-pod-template"
 def containerName = "jnlp"
 
@@ -76,6 +85,7 @@ podTemplate(
                 stage('Dependencies') {
                     sh "ls -la"
                     sh "cat /home/jenkins/.aws/credentials"
+                    echo "${template}"
                 }
             }
         }
