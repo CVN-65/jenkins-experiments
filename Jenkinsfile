@@ -84,7 +84,7 @@ podTemplate(
             container(containerName) {
                 stage('Dependencies') {
                     sh "ls -la"
-                    sh "cat /home/jenkins/.aws/credentials"
+                    // sh "cat /home/jenkins/.aws/credentials"
                     echo "${template}"
                 }
             }
