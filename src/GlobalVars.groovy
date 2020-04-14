@@ -18,14 +18,14 @@ class GlobalVars {
                     resourceRequestMemory: '2Gi',
                     resourceLimitCpu: '2000m',
                     resourceLimitMemory: '2.5Gi',
-                    livenessProbe: containerLivenessProbe(
+                    livenessProbe: [
                         initialDelaySeconds: 0,
                         timeoutSeconds: 0,
                         failureThreshold:0,
                         periodSeconds: 0,
                         successThreshold: 0
-                    ),
-                    
+                    ],
+                    envVars: []
                 ]
             ]
         ]

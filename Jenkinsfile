@@ -55,13 +55,13 @@ def pt =
             ]
         ]
     ]
-    // ,
-    // volumes: [
-    //     secretVolume(
-    //         secretName: 'infra-test-aws',
-    //         mountPath: '/home/jenkins/.aws/'
-    //     )
-    // ]
+    ,
+    volumes: [
+        secretVolume(
+            secretName: 'infra-test-aws',
+            mountPath: '/home/jenkins/.aws/'
+        )
+    ]
 ]
 podTemplate(
      pt
@@ -71,6 +71,7 @@ podTemplate(
             container(containerName) {
                 stage('Dependencies') {
                     sh "ls -la"
+                    sh "cat /home/jenkins/.aws/credentials"
                 }
             }
         }
